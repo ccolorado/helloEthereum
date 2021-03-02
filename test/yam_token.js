@@ -31,12 +31,17 @@ contract("YamToken", function (accounts) {
 
     it('have a totalSupply function', async function () {
 
+      this.CYamToken.methods.hasOwnProperty('totalSupply')
+
       const _totalSupply = await this.CYamToken.methods.totalSupply().call()
+
       _totalSupply.should.be.equal('0');
 
     })
 
     it('have a balanceOf function', async function () {
+
+      this.CYamToken.methods.hasOwnProperty('balnaceOf')
 
       const _balanceOf = await this.CYamToken.methods.balanceOf(accounts[0]).call()
       _balanceOf.should.be.equal('0');
@@ -45,12 +50,18 @@ contract("YamToken", function (accounts) {
 
 
     it('have a allowance function', async function () {
+
+      this.CYamToken.methods.hasOwnProperty('allowance')
+
       const _allowance = await this.CYamToken.methods.allowance(accounts[0], accounts[1]).call()
       _allowance.should.be.equal('0');
+
     })
 
 
     it('have a transfer function', async function () {
+
+      this.CYamToken.methods.hasOwnProperty('transfer')
 
       const _txReciept = await this.CYamToken.methods.transfer(
         accounts[0], BigNumber('1000000000000000000')
